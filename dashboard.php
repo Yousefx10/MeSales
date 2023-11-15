@@ -5,6 +5,8 @@
         <style>
             body{margin: auto;height: 100%;}
             html{height: 100%;}
+            .btn-options{border: none;padding: 15px;width:80%;}
+            .btn-options:hover{background-color: darkseagreen;}
         </style>
 
     </head>
@@ -19,6 +21,8 @@
         </div>
         <div style="float: right;border:1px solid #000;width:19%;height:90%;text-align:center">
             <p>Select Option</p>
+            <br/><br/>
+            <button class="btn-options">Click ME</button>
         </div>
 
 
