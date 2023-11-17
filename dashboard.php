@@ -8,8 +8,9 @@
             .btn-options{border: none;padding: 15px;width:80%;cursor:pointer;font-weight: bold;}
             .btn-options:hover{background-color: darkseagreen;}
 
-            table{padding: 10px;}
-            table tr td{height: 100px;width: 100px;padding: 30px;}
+            table{padding: 10px;margin-left: auto;margin-right: auto;}
+            table tr td{height: 100px;width: 100px;padding: 15px;}
+            .lbltxt{display:block;height:inherit;overflow: hidden;}
         </style>
 
     </head>
@@ -26,39 +27,48 @@
         <!--Main Menu-->
         <div style="float: left;border:2px solid #000;width:60%;height:90%;text-align:center">
             <h2>Main Menu</h2>
-            <div style="overflow-y: scroll;height:inherit  ">
+            <div style="overflow-y: scroll;height:inherit;">
                 <table border="1px">
                     <tr>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
+                        <td><span class="lbltxt">click on me so you won't lose anything</span></td>
+                        <td><span class="lbltxt">1</span></td>
+                        <td><span class="lbltxt">1</span></td>
+                        <td><span class="lbltxt">1</span></td>
+                        <td><span class="lbltxt">1</span></td>
+                        <td><span class="lbltxt">1</span></td>
                     </tr>
                     <tr>
-                        <td>2</td>
-                        <td>2</td>
-                        <td>2</td>
-                        <td>2</td>
-                        <td>2</td>
-                        <td>2</td>
+                        <td><span class="lbltxt">click on me so you won't lose anythingclick on me so you won't lose anythingclick on me so you won't lose anything</span></td>
+                        <td><span class="lbltxt">1</span></td>
+                        <td><span class="lbltxt">1</span></td>
+                        <td><span class="lbltxt">1</span></td>
+                        <td><span class="lbltxt">1</span></td>
+                        <td><span class="lbltxt">1</span></td>
                     </tr>
                     <tr>
-                        <td>3</td>
-                        <td>3</td>
-                        <td>3</td>
-                        <td>3</td>
-                        <td>3</td>
-                        <td>3</td>
+                        <td><span class="lbltxt">1click on me so you won't lose anythingclick on me so you won't lose anythingclick on me so you won't lose anythingclick on me so you won't lose anything12</span></td>
+                        <td><span class="lbltxt">1</span></td>
+                        <td><span class="lbltxt">1</span></td>
+                        <td><span class="lbltxt">1</span></td>
+                        <td><span class="lbltxt">1</span></td>
+                        <td><span class="lbltxt">1</span></td>
                     </tr>
                     <tr>
-                        <td>4</td>
-                        <td>4</td>
-                        <td>4</td>
-                        <td>4</td>
-                        <td>4</td>
-                        <td>4</td>
+                        <td><span class="lbltxt">1</span></td>
+                        <td><span class="lbltxt">1</span></td>
+                        <td><span class="lbltxt">1</span></td>
+                        <td><span class="lbltxt">1</span></td>
+                        <td><span class="lbltxt">1</span></td>
+                        <td><span class="lbltxt">1</span></td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="lbltxt">2</span></td>
+                        <td><span class="lbltxt">2</span></td>
+                        <td><span class="lbltxt">2</span></td>
+                        <td><span class="lbltxt">2</span></td>
+                        <td><span class="lbltxt">2</span></td>
+                        <td><span class="lbltxt">2</span></td>
                     </tr>
 
                 </table>
