@@ -3,14 +3,15 @@
     <head>
         <title>Dashboard</title>
         <style>
-            body{margin: auto;height: 100%;}
+            body{margin: auto;height: 100%;background-color: #ececec;}
             html{height: 100%;}
             .btn-options{border: none;padding: 15px;width:80%;cursor:pointer;font-weight: bold;}
             .btn-options:hover{background-color: darkseagreen;}
 
             table{padding: 10px;margin-left: auto;margin-right: auto;}
-            table tr td{height: 100px;width: 100px;padding: 15px;}
-            .lbltxt{display:block;height:inherit;overflow: hidden;text-overflow: ellipsis;}
+            table tr td{height: 100px;width: 100px;padding: 15px;cursor: pointer;}
+            table tr td:hover{background-color: pink;}
+            .lbltxt{display:block;height:inherit;overflow: hidden;text-overflow: ellipsis;line-height: 100px}
         </style>
 
     </head>
