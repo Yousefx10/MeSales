@@ -9,7 +9,7 @@
             .btn-options:hover{background-color: darkseagreen;}
 
             table{padding: 10px;}
-            table tr{}
+            table tr td{height: 100px;width: 100px;padding: 30px;}
         </style>
 
     </head>
@@ -26,19 +26,43 @@
         <!--Main Menu-->
         <div style="float: left;border:2px solid #000;width:60%;height:90%;text-align:center">
             <h2>Main Menu</h2>
-            
-            <table border="1px">
-                <tr>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>1</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>1</td>
-                </tr>
-            </table>
+            <div style="overflow-y: scroll;height:inherit  ">
+                <table border="1px">
+                    <tr>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>4</td>
+                    </tr>
+
+                </table>
+            </div>
         </div>
 
 
