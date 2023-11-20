@@ -13,7 +13,7 @@
             table tr td:hover{background-color: pink;}
             .lbltxt{display:block;height:inherit;overflow: hidden;text-overflow: ellipsis;line-height: 100px}
         </style>
-
+        <script src="script.js"></script>
     </head>
     <body>
         <!--Results -->
@@ -21,12 +21,18 @@
             <h3>Results</h3>
             <hr/>
 
-            <div class="results-item" style="width: 90%;margin:auto">
+            <div class="results-item" style="width: 90%;margin:auto" id="test">
                 <span style="float: left;">[O]</span>
                 <span style="float: right">Flower</span>
                 <span style="display: block;clear:both">--- 50$ ---</span>
             </div>
             <hr style="width: 70%;"/>
+
+            
+
+
+
+
     </div>
 
         <span style="clear: both;"></span>
