@@ -2,17 +2,18 @@ var mousePosition;
 var offset = [0,0];
 var div;
 var isDown = false;
-console.log("test");
-div = document.getElementById("test");
-div.style.position = "absolute";
-div.style.left = "0px";
-div.style.top = "0px";
-div.style.width = "100px";
-div.style.height = "100px";
-div.style.background = "red";
-div.style.color = "blue";
 
-document.body.appendChild(div);
+
+div = document.getElementById("test");
+div.style.position = "sticky";
+// div.style.left = "0px";
+// div.style.top = "0px";
+// div.style.width = "100px";
+// div.style.height = "100px";
+// div.style.background = "red";
+// div.style.color = "blue";
+
+
 
 div.addEventListener('mousedown', function(e) {
     isDown = true;
@@ -23,18 +24,19 @@ div.addEventListener('mousedown', function(e) {
 
 document.addEventListener('mouseup', function() {
     isDown = false;
+    div.style.margin ='auto';
 }, true);
 
 document.addEventListener('mousemove', function(event) {
     event.preventDefault();
     if (isDown) {
         mousePosition = {
-    
-            x : event.clientX,
-            y : event.clientY
+            
+            x : event.clientX
     
         };
         div.style.left = (mousePosition.x + offset[0]) + 'px';
-        div.style.top  = (mousePosition.y + offset[1]) + 'px';
+        div.style.margin ='0';
+        // div.style.top  = (mousePosition.y + offset[1]) + 'px';
     }
 }, true);

@@ -13,7 +13,7 @@
             table tr td:hover{background-color: pink;}
             .lbltxt{display:block;height:inherit;overflow: hidden;text-overflow: ellipsis;line-height: 100px}
         </style>
-        <script src="script.js"></script>
+
     </head>
     <body>
         <!--Results -->
@@ -102,7 +102,7 @@
 
 
 
-
+        <script src="script.js"></script>
 
     </body>
 </html>
