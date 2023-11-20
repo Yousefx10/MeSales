@@ -11,7 +11,7 @@ div.style.position = "sticky";
 
 
 div.addEventListener('mousedown', function(e) {
-    isDown = true;
+   isDown = true;
 
     offset = [
         div.offsetLeft - e.clientX
@@ -22,9 +22,11 @@ div.addEventListener('mousedown', function(e) {
 var oldx = 0;
 
 document.addEventListener('mouseup', function() {
-    isDown = false;
+   isDown = false;
     div.style.margin ='auto';
    div.style.position = "sticky";
+   div.style.backgroundColor ='transparent';
+
 
 }, true);
 
@@ -37,12 +39,12 @@ document.addEventListener('mousemove', function(event) {
     
         };
 
-    //    console.log("A"+offset[0]);
         div.style.position = "relative";
         div.style.left = (mousePosition.x + offset[0]) + 'px';
 
 
         div.style.margin ='0';
+        div.style.backgroundColor ='red';
 
 
         console.log("ddd");
@@ -51,46 +53,60 @@ document.addEventListener('mousemove', function(event) {
 }, true);
 
 
-
 const swipeableDiv = document.getElementById('test');
 let startX = 0;
 let endX = 0;
+
+let isSwiping = false;
 
 swipeableDiv.addEventListener('mousedown', handleStart);
 swipeableDiv.addEventListener('touchstart', handleStart);
 
 function handleStart(event) {
-    if (event.type === 'mousedown') {
-        startX = event.clientX;
-        document.addEventListener('mousemove', handleMove);
-        document.addEventListener('mouseup', handleEnd);
-    } else if (event.type === 'touchstart') {
-        startX = event.touches[0].clientX;
-        document.addEventListener('touchmove', handleMove);
-        document.addEventListener('touchend', handleEnd);
-    }
+    event.preventDefault(); // Prevent default behavior like text selection
+
+    startX = (event.type === 'mousedown') ? event.clientX : event.touches[0].clientX;
+
+    document.addEventListener('mousemove', handleMove);
+    document.addEventListener('touchmove', handleMove);
+
+    document.addEventListener('mouseup', handleEnd);
+    document.addEventListener('touchend', handleEnd);
 }
 
 function handleMove(event) {
-    endX = event.type === 'mousemove' ? event.clientX : event.touches[0].clientX;
+    endX = (event.type === 'mousemove') ? event.clientX : event.touches[0].clientX;
+
+    // If the user moves the pointer, consider it a swipe
+    isSwiping = true;
 }
 
 function handleEnd() {
-    const swipeDistance = startX - endX;
+    // Check if it was a swipe and not a simple click
+    if (isSwiping) {
+        const swipeDistance = startX - endX;
 
-    // You can adjust this threshold to determine when to consider it a swipe
-    const swipeThreshold = 50;
+        // You can adjust this threshold to determine when to consider it a swipe
+        const swipeThreshold = 150;
 
-    if (Math.abs(swipeDistance) > swipeThreshold) {
-        // Swipe left or right detected, delete the div
-        swipeableDiv.remove();
+//if swipe to right or left :
+//Math.abs(swipeDistance) > swipeThreshold
+//if swipe to left only:
+//swipeDistance > swipeThreshold
+// another version : swipeDistance > -swipeThreshold
+
+        if (swipeDistance > swipeThreshold) {
+            // Swipe left or right detected, delete the div
+            swipeableDiv.remove();
+        }
     }
 
     // Reset coordinates and remove event listeners
     startX = 0;
     endX = 0;
+    isSwiping = false;
     document.removeEventListener('mousemove', handleMove);
-    document.removeEventListener('mouseup', handleEnd);
     document.removeEventListener('touchmove', handleMove);
+    document.removeEventListener('mouseup', handleEnd);
     document.removeEventListener('touchend', handleEnd);
 }
