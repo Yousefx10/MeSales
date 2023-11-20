@@ -17,7 +17,7 @@
     </head>
     <body>
         <!--Results -->
-    <div style="float:left;border:1px solid #000;width:19%;height:90%;text-align:center;margin-right:10px">
+    <div style="overflow:hidden;float:left;border:1px solid #000;width:19%;height:90%;text-align:center;margin-right:10px">
             <h3>Results</h3>
             <hr/>
 
