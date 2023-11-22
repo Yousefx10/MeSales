@@ -17,11 +17,11 @@
     </head>
     <body>
         <!--Results -->
-    <div id="results" style="overflow:hidden;float:left;border:1px solid #000;width:19%;height:90%;text-align:center;margin-right:10px">
+    <div id="results"  style="overflow:hidden;float:left;border:1px solid #000;width:19%;height:90%;text-align:center;margin-right:10px">
             <h3>Results</h3>
             <hr/>
 
-            <div class="results-item" style="width: 90%;margin:auto" id="test">
+            <div onmousedown='mousedownCOLOR(this)' class="results-item" style="width: 90%;margin:auto" id="test">
                 <span style="float: left;">[O]</span>
                 <span style="float: right">Flower</span>
                 <span style="display: block;clear:both">--- 50$ ---</span>
@@ -45,10 +45,10 @@
             <div style="overflow-y: scroll;height:inherit;">
                 <table border="1px">
                     <tr>
-                        <td><span class="lbltxt" data-name="test?" data-price="50" onclick="detailme(this.getAttribute('data-name'),this.getAttribute('data-price'))">Chocolate</span></td>
+                        <td><span class="lbltxt" data-name="test1" data-price="50" onclick="detailme(this.getAttribute('data-name'),this.getAttribute('data-price'))">Chocolate</span></td>
 
 
-                        <td><span class="lbltxt">Cheese</span></td>
+                        <td><span class="lbltxt"  data-name="test2" data-price="40" onclick="detailme(this.getAttribute('data-name'),this.getAttribute('data-price'))">Cheese</span></td>
                         <td><span class="lbltxt">Water</span></td>
                         <td><span class="lbltxt">Milk</span></td>
                         <td><span class="lbltxt">Donut</span></td>

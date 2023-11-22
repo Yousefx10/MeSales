@@ -5,27 +5,42 @@ var div;
 var isDown = false;
 
 
-div = document.getElementById("test");
-div.style.position = "sticky";
+//div = document.getElementById("test");
+//div.style.position = "sticky";
+var currentDIV;
 
 
+function mousedownCOLOR(eh){
+    isDown = true;
+    currentDIV=document.getElementById(eh.id);
+    currentDIV.style.position = "sticky";
+        offset = [
+            currentDIV.offsetLeft - eh.clientX
+        ];
+         swipeableDiv = currentDIV;
+        swipeableDiv.addEventListener('mousedown', handleStart);
+        swipeableDiv.addEventListener('touchstart', handleStart);
+        
 
-div.addEventListener('mousedown', function(e) {
-   isDown = true;
+        // document.addEventListener('mousemove', handleMove);
+        // document.addEventListener('touchmove', handleMove);
+    
+        // document.addEventListener('mouseup', handleEnd);
+        // document.addEventListener('touchend', handleEnd);
 
-    offset = [
-        div.offsetLeft - e.clientX
-    ];
-}, true);
-
+}
 
 var oldx = 0;
 
 document.addEventListener('mouseup', function() {
-   isDown = false;
-    div.style.margin ='auto';
-   div.style.position = "sticky";
-   div.style.backgroundColor ='transparent';
+   if(isDown)
+   {
+    isDown = false;
+   currentDIV.style.margin ='auto';
+   currentDIV.style.position = "sticky";
+   currentDIV.style.backgroundColor ='transparent';
+   }
+
 
 
 }, true);
@@ -39,12 +54,12 @@ document.addEventListener('mousemove', function(event) {
     
         };
 
-        div.style.position = "relative";
-        div.style.left = (mousePosition.x + offset[0]) + 'px';
+        currentDIV.style.position = "relative";
+        currentDIV.style.left = (mousePosition.x + offset[0]) + 'px';
 
 
-        div.style.margin ='0';
-        div.style.backgroundColor ='rgb('+mousePosition.x+', 80, 80)';
+        currentDIV.style.margin ='0';
+        currentDIV.style.backgroundColor ='rgb('+mousePosition.x+', 80, 80)';
 
 
         console.log("ddd");
@@ -53,16 +68,17 @@ document.addEventListener('mousemove', function(event) {
 }, true);
 
 
-const swipeableDiv = document.getElementById('test');
+
 let startX = 0;
 let endX = 0;
 
 let isSwiping = false;
+// const swipeableDiv = document.getElementById('test');
+// swipeableDiv.addEventListener('mousedown', handleStart);
+// swipeableDiv.addEventListener('touchstart', handleStart);
+var swipeableDiv;
 
-swipeableDiv.addEventListener('mousedown', handleStart);
-swipeableDiv.addEventListener('touchstart', handleStart);
-
-function handleStart(event) {
+function handleStart(event) {//done 1
     event.preventDefault(); // Prevent default behavior like text selection
 
     startX = (event.type === 'mousedown') ? event.clientX : event.touches[0].clientX;
@@ -72,6 +88,7 @@ function handleStart(event) {
 
     document.addEventListener('mouseup', handleEnd);
     document.addEventListener('touchend', handleEnd);
+    
 }
 
 function handleMove(event) {
@@ -115,10 +132,10 @@ function handleEnd() {
 function detailme(detail,price)
 {
     var newResult=
-    "<div class='results-item' style='width: 90%;margin:auto' id='test'>"+
+    "<div class='results-item' style='width: 90%;margin:auto' id='"+detail+"' onmousedown='mousedownCOLOR(this)'>"+
     "<span style='float: left;'>[O]</span>"+
-    "<span style='float: right'>Flower</span>"+
-    "<span style='display: block;clear:both'>--- 50$ ---</span>"+
+    "<span style='float: right'>"+detail+"</span>"+
+    "<span style='display: block;clear:both'>---"+ price + "$ ---</span>"+
     "</div><hr style='width: 70%;'/>";
 
     document.getElementById("results").innerHTML+=newResult;
