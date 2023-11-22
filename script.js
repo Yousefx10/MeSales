@@ -44,7 +44,7 @@ document.addEventListener('mousemove', function(event) {
 
 
         div.style.margin ='0';
-        div.style.backgroundColor ='red';
+        div.style.backgroundColor ='rgb('+mousePosition.x+', 80, 80)';
 
 
         console.log("ddd");
