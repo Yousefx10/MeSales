@@ -45,7 +45,9 @@
             <div style="overflow-y: scroll;height:inherit;">
                 <table border="1px">
                     <tr>
-                        <td><span class="lbltxt">Chocolate</span></td>
+                        <td><span class="lbltxt" name="test" data-name="test?" data-price="50" onclick="detailme(this.getAttribute('data-name'))">Chocolate</span></td>
+
+
                         <td><span class="lbltxt">Cheese</span></td>
                         <td><span class="lbltxt">Water</span></td>
                         <td><span class="lbltxt">Milk</span></td>

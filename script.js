@@ -110,3 +110,9 @@ function handleEnd() {
     document.removeEventListener('mouseup', handleEnd);
     document.removeEventListener('touchend', handleEnd);
 }
+
+
+function detailme(detail)
+{
+    alert("hello  " + detail );
+}
