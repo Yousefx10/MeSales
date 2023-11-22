@@ -112,7 +112,14 @@ function handleEnd() {
 }
 
 
-function detailme(detail)
+function detailme(detail,price)
 {
-    alert("hello  " + detail );
+    var newResult=
+    "<div class='results-item' style='width: 90%;margin:auto' id='test'>"+
+    "<span style='float: left;'>[O]</span>"+
+    "<span style='float: right'>Flower</span>"+
+    "<span style='display: block;clear:both'>--- 50$ ---</span>"+
+    "</div><hr style='width: 70%;'/>";
+
+    document.getElementById("results").innerHTML+=newResult;
 }
