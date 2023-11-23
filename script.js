@@ -144,6 +144,9 @@ function handleEnd() {
 
 function detailme(detail,price)
 {
+    detail+=generalID;
+    generalID++;
+    console.log(generalID);
     var newResult=
     
     "<span style='float: left;'>[O]</span>"+
@@ -182,3 +185,6 @@ function appendElement (elemNode,textNode,containerToAppend,newID) {
     //element.appendChild(text);
     container.appendChild(element);
 }
+
+
+var generalID=0;
