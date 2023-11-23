@@ -20,12 +20,13 @@
     <div id="results"  style="overflow:hidden;float:left;border:1px solid #000;width:19%;height:90%;text-align:center;margin-right:10px">
             <h3>Results</h3>
             <hr/>
-
+<!--  
             <div onmousedown='mousedownCOLOR(this)' class="results-item" style="width: 90%;margin:auto" id="test">
                 <span style="float: left;">[O]</span>
                 <span style="float: right">Flower</span>
                 <span style="display: block;clear:both">--- 50$ ---</span>
             </div>
+            -->
             <hr style="width: 70%;"/>
 
             

@@ -10,23 +10,26 @@ var isDown = false;
 var currentDIV;
 
 
-function mousedownCOLOR(eh){
-    isDown = true;
+function mousedownCOLOR(eh,event){
     currentDIV=document.getElementById(eh.id);
-    currentDIV.style.position = "sticky";
+    isDown = true;
+    
+   // currentDIV.style.position = "sticky";
         offset = [
-            currentDIV.offsetLeft - eh.clientX
+            currentDIV.offsetLeft - event.clientX
         ];
          swipeableDiv = currentDIV;
         swipeableDiv.addEventListener('mousedown', handleStart);
         swipeableDiv.addEventListener('touchstart', handleStart);
-        
 
-        // document.addEventListener('mousemove', handleMove);
-        // document.addEventListener('touchmove', handleMove);
-    
-        // document.addEventListener('mouseup', handleEnd);
-        // document.addEventListener('touchend', handleEnd);
+        document.addEventListener('mousemove', handleMove);
+document.addEventListener('touchmove', handleMove);
+
+document.addEventListener('mouseup', handleEnd);
+document.addEventListener('touchend', handleEnd);
+        
+console.log(eh.clientX);
+
 
 }
 
@@ -39,6 +42,7 @@ document.addEventListener('mouseup', function() {
    currentDIV.style.margin ='auto';
    currentDIV.style.position = "sticky";
    currentDIV.style.backgroundColor ='transparent';
+   
    }
 
 
@@ -62,9 +66,12 @@ document.addEventListener('mousemove', function(event) {
         currentDIV.style.backgroundColor ='rgb('+mousePosition.x+', 80, 80)';
 
 
-        console.log("ddd");
-  
+       // console.log("ddd");
+        //console.log(currentDIV.id);
+        
     }
+    isSwiping=true;
+
 }, true);
 
 
@@ -72,7 +79,7 @@ document.addEventListener('mousemove', function(event) {
 let startX = 0;
 let endX = 0;
 
-let isSwiping = false;
+var isSwiping = false;
 // const swipeableDiv = document.getElementById('test');
 // swipeableDiv.addEventListener('mousedown', handleStart);
 // swipeableDiv.addEventListener('touchstart', handleStart);
@@ -83,19 +90,23 @@ function handleStart(event) {//done 1
 
     startX = (event.type === 'mousedown') ? event.clientX : event.touches[0].clientX;
 
-    document.addEventListener('mousemove', handleMove);
-    document.addEventListener('touchmove', handleMove);
 
-    document.addEventListener('mouseup', handleEnd);
-    document.addEventListener('touchend', handleEnd);
-    
+// document.addEventListener('mousemove', handleMove);
+// document.addEventListener('touchmove', handleMove);
+
+// document.addEventListener('mouseup', handleEnd);
+// document.addEventListener('touchend', handleEnd);
 }
+
+
+
+
 
 function handleMove(event) {
     endX = (event.type === 'mousemove') ? event.clientX : event.touches[0].clientX;
-
+console.log("works");
     // If the user moves the pointer, consider it a swipe
-    isSwiping = true;
+     isSwiping = true;
 }
 
 function handleEnd() {
@@ -112,9 +123,11 @@ function handleEnd() {
 //swipeDistance > swipeThreshold
 // another version : swipeDistance > -swipeThreshold
 
-        if (swipeDistance > swipeThreshold) {
+        if (swipeDistance > -swipeThreshold) {
             // Swipe left or right detected, delete the div
             swipeableDiv.remove();
+            console.log(swipeDistance);
+            console.log(swipeThreshold);
         }
     }
 
@@ -132,11 +145,40 @@ function handleEnd() {
 function detailme(detail,price)
 {
     var newResult=
-    "<div class='results-item' style='width: 90%;margin:auto' id='"+detail+"' onmousedown='mousedownCOLOR(this)'>"+
+    
     "<span style='float: left;'>[O]</span>"+
     "<span style='float: right'>"+detail+"</span>"+
     "<span style='display: block;clear:both'>---"+ price + "$ ---</span>"+
-    "</div><hr style='width: 70%;'/>";
+    "<hr style='width: 70%;'/>";
 
-    document.getElementById("results").innerHTML+=newResult;
+
+    appendElement("div","","results",detail);
+
+
+
+
+    document.getElementById(detail).innerHTML=newResult;
+
+    document.getElementById(detail).addEventListener('mousedown', function(event) {
+        // Call your normal function and pass the event object
+        mousedownCOLOR(document.getElementById(detail),event);
+    });
+}
+
+
+
+
+
+function appendElement (elemNode,textNode,containerToAppend,newID) {
+    var container = document.getElementById(containerToAppend);
+    var element = document.createElement(elemNode);
+    var text = document.createTextNode(textNode);
+
+    element.setAttribute('class', 'results-item;');
+    element.setAttribute('style', 'width: 90%;margin:auto');
+    element.setAttribute('id', newID);
+
+
+    //element.appendChild(text);
+    container.appendChild(element);
 }
