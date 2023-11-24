@@ -17,7 +17,7 @@
     </head>
     <body>
         <!--Results -->
-    <div id="results"  style="overflow:hidden;float:left;border:1px solid #000;width:19%;height:90%;text-align:center;margin-right:10px">
+    <div id="results"  style="position:relative;overflow:hidden;float:left;border:1px solid #000;width:19%;height:90%;text-align:center;margin-right:10px">
             <h3>Results</h3>
             <hr/>
 <!--  
@@ -31,7 +31,9 @@
 
             
 
-
+<div id="end" style="position: absolute;bottom:0;width:100%">
+    <button style="background:none;border:1px solid #000;padding:20px;width:100%">complete</button>
+</div>
 
 
     </div>
@@ -101,6 +103,7 @@
             <h3 >Select Option</h3>
             <br/><br/>
             <button class="btn-options">Click ME</button>
+            <button class="btn-options">Settings</button>
         </div>
 
 

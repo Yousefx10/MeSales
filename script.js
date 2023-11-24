@@ -104,6 +104,7 @@ function handleStart(event) {//done 1
 
 function handleMove(event) {
     endX = (event.type === 'mousemove') ? event.clientX : event.touches[0].clientX;
+
     // If the user moves the pointer, consider it a swipe
 
 
@@ -129,6 +130,7 @@ function handleEnd() {
             // Swipe left or right detected, delete the div
             swipeableDiv.remove();
             
+        }
     }
 
     // Reset coordinates and remove event listeners
