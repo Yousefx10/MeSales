@@ -19,8 +19,8 @@ function mousedownCOLOR(eh,event){
             currentDIV.offsetLeft - event.clientX
         ];
          swipeableDiv = currentDIV;
-        swipeableDiv.addEventListener('mousedown', handleStart);
-        swipeableDiv.addEventListener('touchstart', handleStart);
+        // swipeableDiv.addEventListener('mousedown', handleStart);
+        // swipeableDiv.addEventListener('touchstart', handleStart);
 
         document.addEventListener('mousemove', handleMove);
 document.addEventListener('touchmove', handleMove);
@@ -42,6 +42,7 @@ document.addEventListener('mouseup', function() {
    currentDIV.style.margin ='auto';
    currentDIV.style.position = "sticky";
    currentDIV.style.backgroundColor ='transparent';
+   currentDIV.style.left ='0';
    
    }
 
@@ -104,9 +105,9 @@ function handleStart(event) {//done 1
 
 function handleMove(event) {
     endX = (event.type === 'mousemove') ? event.clientX : event.touches[0].clientX;
-
+    // if(endX<0)endX=0;
     // If the user moves the pointer, consider it a swipe
-
+    //console.log(endX);
 
     if(isDown)
      isSwiping = true;
@@ -118,18 +119,19 @@ function handleEnd() {
         const swipeDistance = startX - endX;
 
         // You can adjust this threshold to determine when to consider it a swipe
-        const swipeThreshold = 150;
+        const swipeThreshold = 200;
 
 //if swipe to right or left :
 //Math.abs(swipeDistance) > swipeThreshold
 //if swipe to left only:
 //swipeDistance > swipeThreshold
 // another version : swipeDistance > -swipeThreshold
-
-        if (swipeDistance > -swipeThreshold) {
+console.log("distance" + swipeDistance)
+console.log("swipeThreshold" + swipeThreshold)
+        if (swipeDistance > swipeThreshold) {
             // Swipe left or right detected, delete the div
             swipeableDiv.remove();
-            
+
         }
     }
 
@@ -168,6 +170,9 @@ function detailme(detail,price)
         // Call your normal function and pass the event object
         mousedownCOLOR(document.getElementById(detail),event);
     });
+
+    document.getElementById(detail).addEventListener('mousedown', handleStart);
+    document.getElementById(detail).addEventListener('touchstart', handleStart);
 }
 
 
