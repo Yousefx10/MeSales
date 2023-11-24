@@ -28,7 +28,7 @@ document.addEventListener('touchmove', handleMove);
 document.addEventListener('mouseup', handleEnd);
 document.addEventListener('touchend', handleEnd);
         
-console.log(eh.clientX);
+
 
 
 }
@@ -104,7 +104,6 @@ function handleStart(event) {//done 1
 
 function handleMove(event) {
     endX = (event.type === 'mousemove') ? event.clientX : event.touches[0].clientX;
-console.log("works");
     // If the user moves the pointer, consider it a swipe
 
 
@@ -129,9 +128,7 @@ function handleEnd() {
         if (swipeDistance > -swipeThreshold) {
             // Swipe left or right detected, delete the div
             swipeableDiv.remove();
-            console.log(swipeDistance);
-            console.log(swipeThreshold);
-        }
+            
     }
 
     // Reset coordinates and remove event listeners
@@ -149,7 +146,7 @@ function detailme(detail,price)
 {
     detail+=generalID;
     generalID++;
-    console.log(generalID);
+
     var newResult=
     
     "<span style='float: left;'>[O]</span>"+
