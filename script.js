@@ -68,9 +68,9 @@ document.addEventListener('mousemove', function(event) {
 
        // console.log("ddd");
         //console.log(currentDIV.id);
-        
+        isSwiping=true;
     }
-    isSwiping=true;
+    
 
 }, true);
 
@@ -106,6 +106,9 @@ function handleMove(event) {
     endX = (event.type === 'mousemove') ? event.clientX : event.touches[0].clientX;
 console.log("works");
     // If the user moves the pointer, consider it a swipe
+
+
+    if(isDown)
      isSwiping = true;
 }
 
