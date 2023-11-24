@@ -157,7 +157,7 @@ function detailme(detail,price)
     "<hr style='width: 70%;'/>";
 
 
-    appendElement("div","","results",detail);
+    appendElement("div","","showHERE",detail);
 
 
 

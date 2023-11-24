@@ -17,7 +17,7 @@
     </head>
     <body>
         <!--Results -->
-    <div id="results"  style="position:relative;overflow:hidden;float:left;border:1px solid #000;width:19%;height:90%;text-align:center;margin-right:10px">
+    <div id="results"  style="overflow:hidden;position:relative;float:left;border:1px solid #000;width:19%;height:98%;text-align:center;margin-right:10px">
             <h3>Results</h3>
             <hr/>
 <!--  
@@ -28,7 +28,10 @@
             </div>
             -->
             <hr style="width: 70%;"/>
+<div id="showHERE" style="overflow-x:hidden;overflow-y: scroll;height:75%">
 
+
+</div>
             
 
 <div id="end" style="position: absolute;bottom:0;width:100%">
@@ -43,7 +46,7 @@
 
 
         <!--Main Menu-->
-        <div style="float: left;border:2px solid #000;width:60%;height:90%;text-align:center">
+        <div style="float: left;border:2px solid #000;width:60%;height:95%;text-align:center">
             <h2>Main Menu</h2>
             <div style="overflow-y: scroll;height:inherit;">
                 <table border="1px">
@@ -99,7 +102,7 @@
 
 
         <!--Options-->
-        <div style="float: right;border:1px solid #000;width:19%;height:90%;text-align:center">
+        <div style="float: right;border:1px solid #000;width:19%;height:98%;text-align:center">
             <h3 >Select Option</h3>
             <br/><br/>
             <button class="btn-options">Click ME</button>
