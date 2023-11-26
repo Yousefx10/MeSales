@@ -195,3 +195,11 @@ function appendElement (elemNode,textNode,containerToAppend,newID) {
 
 
 var generalID=0;
+
+
+function done()
+{
+    document.getElementById("mainmenu").style.display="none";
+    document.getElementById("printoption").style.display="block";
+    
+}

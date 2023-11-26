@@ -35,7 +35,7 @@
             
 
 <div id="end" style="position: absolute;bottom:0;width:100%">
-    <button style="background:none;border:1px solid #000;padding:20px;width:100%">complete</button>
+    <button style="background:none;border:1px solid #000;padding:20px;width:100%" onclick="done()">complete</button>
 </div>
 
 
@@ -48,7 +48,7 @@
         <!--Main Menu-->
         <div style="float: left;border:2px solid #000;width:60%;height:95%;text-align:center">
             <h2>Main Menu</h2>
-            <div style="overflow-y: scroll;height:inherit;">
+            <div id="mainmenu" style="overflow-y: scroll;height:inherit;">
                 <table border="1px">
                     <tr>
                         <td><span class="lbltxt" data-name="test" data-price="50" onclick="detailme(this.getAttribute('data-name'),this.getAttribute('data-price'))">Chocolate</span></td>
@@ -95,6 +95,10 @@
                     </tr>
 
                 </table>
+            </div>
+
+            <div id="printoption" style="display: none;">
+            <p style="font-size: 30px;">Completing The Order</p>
             </div>
         </div>
 
