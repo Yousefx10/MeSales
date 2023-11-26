@@ -207,13 +207,17 @@ function done(btn)
         btn.value="edit";
 
     }
-    else{
+    else if(btn.value=="edit"){
         document.getElementById("printoption").style.display="none";
         document.getElementById("mainmenu").style.display="block";
 
         btn.innerHTML="complete";
 
         btn.value="complete";
+    }
+    else{
+        document.getElementById("settings").style.display="block";
+        document.getElementById("mainmenu").style.display="none";
     }
 
 }

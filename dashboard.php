@@ -100,6 +100,12 @@
             <div id="printoption" style="display: none;">
             <p style="font-size: 30px;">Completing The Order</p>
             </div>
+
+
+            <div id="settings" style="display: none;">
+            <p style="font-size: 30px;">S E T T I N G S</p>
+
+            </div>
         </div>
 
 
@@ -110,7 +116,7 @@
             <h3 >Select Option</h3>
             <br/><br/>
             <button class="btn-options">Click ME</button>
-            <button class="btn-options">Settings</button>
+            <button class="btn-options" onclick="done(this)" value="settings">Settings</button>
         </div>
 
 
