@@ -35,7 +35,7 @@
             
 
 <div id="end" style="position: absolute;bottom:0;width:100%">
-    <button style="background:none;border:1px solid #000;padding:20px;width:100%" onclick="done()">complete</button>
+    <button value="complete"style="background:none;border:1px solid #000;padding:20px;width:100%" onclick="done(this)">complete</button>
 </div>
 
 

@@ -197,9 +197,23 @@ function appendElement (elemNode,textNode,containerToAppend,newID) {
 var generalID=0;
 
 
-function done()
+function done(btn)
 {
-    document.getElementById("mainmenu").style.display="none";
-    document.getElementById("printoption").style.display="block";
-    
+    if(btn.value=="complete")
+    {
+        document.getElementById("mainmenu").style.display="none";
+        document.getElementById("printoption").style.display="block";
+        btn.innerHTML="back";
+        btn.value="edit";
+
+    }
+    else{
+        document.getElementById("printoption").style.display="none";
+        document.getElementById("mainmenu").style.display="block";
+
+        btn.innerHTML="complete";
+
+        btn.value="complete";
+    }
+
 }
