@@ -194,30 +194,44 @@ function appendElement (elemNode,textNode,containerToAppend,newID) {
 }
 
 
-var generalID=0;
+var generalID=0,
+currentSCREEN="mainmenu";
+//current screen is a short way to hide it when moving to a new screen"page".
 
 
+//changing switching between screen functions
 function done(btn)
 {
-    if(btn.value=="complete")
+    console.log(currentSCREEN);
+
+    document.getElementById(currentSCREEN).style.display="none";
+    document.getElementById(btn.value).style.display="block";
+    currentSCREEN=  btn.value;
+    if(currentSCREEN=="printoption")
     {
-        document.getElementById("mainmenu").style.display="none";
-        document.getElementById("printoption").style.display="block";
         btn.innerHTML="back";
-        btn.value="edit";
+        btn.value="mainmenu";
 
     }
-    else if(btn.value=="edit"){
-        document.getElementById("printoption").style.display="none";
-        document.getElementById("mainmenu").style.display="block";
+    else if (currentSCREEN=="mainmenu")
+    {
+        btn.innerHTML="complete";
+        btn.value="printoption";
+    }
+    else if(currentSCREEN=="settings"){
 
         btn.innerHTML="complete";
 
         btn.value="complete";
     }
-    else{
-        document.getElementById("settings").style.display="block";
-        document.getElementById("mainmenu").style.display="none";
-    }
+    // else{
+    //     document.getElementById("settings").style.display="block";
+    //    // document.getElementById("mainmenu").style.display="none";
+    // }
+
+
+
+
+
 
 }

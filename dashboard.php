@@ -35,7 +35,7 @@
             
 
 <div id="end" style="position: absolute;bottom:0;width:100%">
-    <button value="complete"style="background:none;border:1px solid #000;padding:20px;width:100%" onclick="done(this)">complete</button>
+    <button value="printoption"style="background:none;border:1px solid #000;padding:20px;width:100%" onclick="done(this)">complete</button>
 </div>
 
 
@@ -115,7 +115,7 @@
         <div style="float: right;border:1px solid #000;width:19%;height:98%;text-align:center">
             <h3 >Select Option</h3>
             <br/><br/>
-            <button class="btn-options">Click ME</button>
+            <button class="btn-options" onclick="done(this)" value="mainmenu">Main Menu</button>
             <button class="btn-options" onclick="done(this)" value="settings">Settings</button>
         </div>
 
