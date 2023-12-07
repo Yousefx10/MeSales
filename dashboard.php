@@ -6,7 +6,7 @@
             body{margin: auto;height: 100%;background-color: #ececec;}
             html{height: 100%;}
             .btn-options{border: none;padding: 15px;width:80%;cursor:pointer;font-weight: bold;}
-            .btn-options:hover{background-color: darkseagreen;}
+            .btn-options:hover{background-color: darkseagreen !important;}
 
             table{padding: 10px;margin-left: auto;margin-right: auto;}
             table tr td{height: 100px;width: 100px;padding: 15px;cursor: pointer;}
@@ -112,11 +112,11 @@
 
 
         <!--Options-->
-        <div style="float: right;border:1px solid #000;width:19%;height:98%;text-align:center">
+        <div id="optionsdiv"style="float: right;border:1px solid #000;width:19%;height:98%;text-align:center">
             <h3 >Select Option</h3>
             <br/><br/>
-            <button class="btn-options" onclick="done(this)" value="mainmenu">Main Menu</button>
-            <button class="btn-options" onclick="done(this)" value="settings">Settings</button>
+            <button class="btn-options" onclick="done(this)"  id="btnmenu">Main Menu</button>
+            <button class="btn-options" onclick="done(this)" value="settings" id="btnsettings">Settings</button>
         </div>
 
 

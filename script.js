@@ -204,30 +204,36 @@ function done(btn)
 {
     console.log(currentSCREEN);
 
-    document.getElementById(currentSCREEN).style.display="none";
-    document.getElementById(btn.value).style.display="block";
+    //document.getElementById(currentSCREEN).style.display="none";
+    //document.getElementById(btn.value).style.display="block";
     currentSCREEN=  btn.value;
     if(currentSCREEN=="printoption")
     {
         btn.innerHTML="back";
         btn.value="mainmenu";
+        document.getElementById("optionsdiv").style.visibility="hidden";
 
     }
     else if (currentSCREEN=="mainmenu")
     {
         btn.innerHTML="complete";
         btn.value="printoption";
+        document.getElementById("optionsdiv").style.visibility="visible";
     }
     else if(currentSCREEN=="settings"){
 
-        btn.innerHTML="complete";
+        //btn.innerHTML="complete";
+        document.getElementById("results").style.visibility="hidden";
+        btn.style.backgroundColor="yellow";
+        document.getElementById("btnmenu").style.backgroundColor="transparent";
 
-        btn.value="complete";
+        //btn.value="complete";
     }
-    // else{
-    //     document.getElementById("settings").style.display="block";
-    //    // document.getElementById("mainmenu").style.display="none";
-    // }
+    else{
+        document.getElementById("results").style.visibility="visible";
+        btn.style.backgroundColor="yellow";
+        document.getElementById("btnsettings").style.backgroundColor="";
+    }
 
 
 
