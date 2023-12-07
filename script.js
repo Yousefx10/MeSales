@@ -131,6 +131,8 @@ console.log("swipeThreshold" + swipeThreshold)
         if (swipeDistance > swipeThreshold) {
             // Swipe left or right detected, delete the div
             swipeableDiv.remove();
+            var removvvvvve = currentINSIDEmenu.indexOf("1");
+            currentINSIDEmenu.splice(removvvvvve);
 
         }
     }
