@@ -51,7 +51,7 @@
             <div id="mainmenu" style="overflow-y: scroll;height:inherit;">
                 <table border="1px">
                     <tr>
-                        <td><span class="lbltxt" data-name="test" data-price="50" onclick="detailme(this.getAttribute('data-name'),this.getAttribute('data-price'))">Chocolate</span></td>
+                        <td><span class="lbltxt" data-name="Chocolate" data-price="50" data-itemid="1" onclick="detailme(this.getAttribute('data-name'),this.getAttribute('data-price'),this.getAttribute('data-itemid'))">Chocolate</span></td>
 
 
                         <td><span class="lbltxt"  data-name="test" data-price="40" onclick="detailme(this.getAttribute('data-name'),this.getAttribute('data-price'))">Cheese</span></td>

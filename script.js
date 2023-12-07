@@ -144,16 +144,23 @@ console.log("swipeThreshold" + swipeThreshold)
     document.removeEventListener('mouseup', handleEnd);
     document.removeEventListener('touchend', handleEnd);
 }
+//current items inside the menu, this should be automatically changes everytime new item added or removed.
+var currentINSIDEmenu=[];
 
-
-function detailme(detail,price)
+function detailme(detail,price,currentID)
 {
-    detail+=generalID;
+    //detail+=generalID;
     generalID++;
-
+if(currentINSIDEmenu.includes(currentID))
+{
+var nownumber = parseInt(document.getElementById("ID"+currentID).innerHTML);
+    document.getElementById("ID"+currentID).innerHTML=(++nownumber);
+}
+else{
+    currentINSIDEmenu.push(currentID);
     var newResult=
     
-    "<span style='float: left;'>[O]</span>"+
+    "<span id='ID"+currentID+"'style='float: left;'>1</span>"+
     "<span style='float: right'>"+detail+"</span>"+
     "<span style='display: block;clear:both'>---"+ price + "$ ---</span>"+
     "<hr style='width: 70%;'/>";
@@ -173,6 +180,11 @@ function detailme(detail,price)
 
     document.getElementById(detail).addEventListener('mousedown', handleStart);
     document.getElementById(detail).addEventListener('touchstart', handleStart);
+}
+
+
+//generalID++;
+
 }
 
 
