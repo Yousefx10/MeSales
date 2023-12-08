@@ -54,7 +54,7 @@
                         <td><span class="lbltxt" data-name="Chocolate" data-price="50" data-itemid="1" onclick="detailme(this.getAttribute('data-name'),this.getAttribute('data-price'),this.getAttribute('data-itemid'))">Chocolate</span></td>
 
 
-                        <td><span class="lbltxt"  data-name="test" data-price="40" onclick="detailme(this.getAttribute('data-name'),this.getAttribute('data-price'))">Cheese</span></td>
+                        <td><span class="lbltxt"  data-name="test" data-price="40"       data-itemid="2" onclick="detailme(this.getAttribute('data-name'),this.getAttribute('data-price'),this.getAttribute('data-itemid'))">Cheese</span></td>
                         <td><span class="lbltxt">Water</span></td>
                         <td><span class="lbltxt">Milk</span></td>
                         <td><span class="lbltxt">Donut</span></td>

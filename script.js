@@ -7,11 +7,12 @@ var isDown = false;
 
 //div = document.getElementById("test");
 //div.style.position = "sticky";
-var currentDIV;
+var currentDIV,currentDIVitemID="none";
 
 
 function mousedownCOLOR(eh,event){
     currentDIV=document.getElementById(eh.id);
+    currentDIVitemID=document.getElementById(eh.id).getAttribute('data-itemid');
     isDown = true;
     
    // currentDIV.style.position = "sticky";
@@ -131,8 +132,13 @@ console.log("swipeThreshold" + swipeThreshold)
         if (swipeDistance > swipeThreshold) {
             // Swipe left or right detected, delete the div
             swipeableDiv.remove();
-            var removvvvvve = currentINSIDEmenu.indexOf("1");
-            currentINSIDEmenu.splice(removvvvvve);
+            if(currentDIVitemID!="none")
+            {
+                var removvvvvve = currentINSIDEmenu.indexOf(currentDIVitemID);
+                console.log(removvvvvve);
+                currentINSIDEmenu.splice(removvvvvve,1);
+            }
+
 
         }
     }
@@ -168,7 +174,7 @@ else{
     "<hr style='width: 70%;'/>";
 
 
-    appendElement("div","","showHERE",detail);
+    appendElement("div","","showHERE",detail,currentID);
 
 
 
@@ -193,7 +199,7 @@ else{
 
 
 
-function appendElement (elemNode,textNode,containerToAppend,newID) {
+function appendElement (elemNode,textNode,containerToAppend,newID,currentID) {
     var container = document.getElementById(containerToAppend);
     var element = document.createElement(elemNode);
     var text = document.createTextNode(textNode);
@@ -201,6 +207,7 @@ function appendElement (elemNode,textNode,containerToAppend,newID) {
     element.setAttribute('class', 'results-item;');
     element.setAttribute('style', 'width: 90%;margin:auto');
     element.setAttribute('id', newID);
+    element.setAttribute('data-itemid', currentID);
 
 
     //element.appendChild(text);
