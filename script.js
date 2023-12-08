@@ -162,7 +162,9 @@ function detailme(detail,price,currentID)
 if(currentINSIDEmenu.includes(currentID))
 {
 var nownumber = parseInt(document.getElementById("ID"+currentID).innerHTML);
+var nowprice =  parseInt(document.getElementById("priceID"+currentID).innerHTML);
     document.getElementById("ID"+currentID).innerHTML=(++nownumber);
+    document.getElementById("priceID"+currentID).innerHTML=(nowprice+"<span>></span>"+ nowprice*nownumber );
 }
 else{
     currentINSIDEmenu.push(currentID);
@@ -170,7 +172,7 @@ else{
     
     "<span id='ID"+currentID+"'style='float: left;'>1</span>"+
     "<span style='float: right'>"+detail+"</span>"+
-    "<span style='display: block;clear:both'>---"+ price + "$ ---</span>"+
+    "<span style='display: block;clear:both'>---" + "<span id='priceID"+currentID+"'>"+price+"</span>$"+" ---</span>"+
     "<hr style='width: 70%;'/>";
 
 
